@@ -1,7 +1,7 @@
 {
   "name": "syncing-part1",
   "version": "1.0.0",
-  "description": "",
+  "description": "A node.js app that generates usernames.",
   "engines": {
     "node": "7.1.0",
     "npm": "3.10.x"
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SPCoffey/canvas-syncing-assignment-part1.git"
+    "url": "git+https://github.com/SPCoffey/UseNames.git"
   },
   "author": "Sean Coffey",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SPCoffey/canvas-syncing-assignment-part1/issues"
+    "url": "https://github.com/SPCoffey/UseNames.gitissues"
   },
-  "homepage": "https://github.com/SPCoffey/canvas-syncing-assignment-part1#readme",
+  "homepage": "https://github.com/SPCoffey/UseNames.git#readme",
   "dependencies": {
     "socket.io": "^1.7.3"
   },
