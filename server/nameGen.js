@@ -97,6 +97,34 @@ const prefix = (name) => {
   return temp;
 };
 
+const properName = (name) => {
+  let temp = name;
+  const random = randomGen(0, 3);
+
+  switch (random) {
+    case 0:
+      temp = `Mr.${randomNameNoFilter(randomGen(1, 3))}`;
+      break;
+    case 1:
+      temp = `Ms.${randomNameNoFilter(randomGen(1, 3))}`;
+      break;
+    case 2:
+	  let word = randomNameNoFilter(1);
+	  if (randomGen(0,2) === 0) {
+		  temp = `${word}y_Mc${word}face`;
+	  }
+	  else {
+		  temp = `${randomNameNoFilter(1)}y_Mc${randomNameNoFilter(1)}face`;
+	  }
+      break;
+    default:
+      // Do nothing
+      break;
+  }
+
+  return temp;
+};
+
 const fileType = (name) => {
   let temp = name;
   const random = randomGen(0, 8);
@@ -259,10 +287,10 @@ const possessive = () => {
   
   switch (random) {
     case 0:
-      temp = `${randomNameNoFilter(randomGen(1, 3))}'s_${randomNameNoFilter(randomGen(1, 3))}`;
+      temp = `${randomNameNoFilter(randomGen(1, 3))}'s_${randomNameNoFilter(1)}`;
       break;
     case 1:
-      temp = `${randomNameNoFilter(randomGen(1, 3))}_And_The_${randomNameNoFilter(randomGen(1, 3))}`;
+      temp = `${randomNameNoFilter(1)}_And_The_${randomNameNoFilter(1)}`;
       break;
     default:
       // Do nothing
@@ -281,28 +309,29 @@ const verb = () => {
   const random = randomGen(0, 3);
   let temp = '';
   let tempVerb = verbs[randomGen(0, verbs.length)];
+  if (tempVerb.charAt(tempVerb.length - 2) === 's') {
+    tempVerb += 'es';
+  } else {
+    tempVerb += 's';
+  }
 
   switch (random) {
     case 0:
-      temp = `${verbs[randomGen(0, verbs.length)]}_${randomNameNoFilter(randomGen(1, 3))}`;
+      temp = `${verbs[randomGen(0, verbs.length)]}_${randomNameNoFilter(1)}`;
       break;
     case 1:
-      if (tempVerb.charAt(tempVerb.Length - 2) === 's') {
-        tempVerb += 'es';
+	  let tempName = randomNameNoFilter(1);
+	  
+	  if (tempName.charAt(tempName.length - 2) === 's') {
+        tempName += 'es';
       } else {
-        tempVerb += 's';
+        tempName += 's';
       }
 
-      temp = `${randomNameNoFilter(randomGen(1, 3))}_${tempVerb}_${randomNameNoFilter(randomGen(1, 3))}s`;
+      temp = `${randomNameNoFilter(1)}_${tempVerb}_${tempName}`;
       break;
 	case 2:
-      if (tempVerb.charAt(tempVerb.length - 2) === 's') {
-        tempVerb += 'es';
-      } else {
-        tempVerb += 's';
-      }
-
-      temp = `${tempVerb}_with_${randomNameNoFilter(randomGen(1, 3))}s`;
+      temp = `${tempVerb}_with_${randomNameNoFilter(1)}s`;
       break;
     default:
       // Do nothing
@@ -342,7 +371,7 @@ const randomSpace = (name) => {
 
 const applyFilter = (name) => {
   let temp = name;
-  const filter = randomGen(0, 11);
+  const filter = randomGen(0, 12);
 
   switch (filter) {
     case (0):
@@ -374,6 +403,9 @@ const applyFilter = (name) => {
       break;
     case (9):
       temp = numbers(temp);
+      break;
+	case (10):
+      temp = properName(temp);
       break;
     default:
       // Do nothing
