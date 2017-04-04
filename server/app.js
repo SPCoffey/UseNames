@@ -9,6 +9,7 @@ const index = fs.readFileSync(`${__dirname}/../hosted/index.html`);
 const cssFile = fs.readFileSync(`${__dirname}/../hosted/clientStyle.css`);
 const scriptFile = fs.readFileSync(`${__dirname}/../hosted/clientScript.js`);
 const starImg = fs.readFileSync(`${__dirname}/../hosted/star.png`);
+const yellStarImg = fs.readFileSync(`${__dirname}/../hosted/yellowStar.png`);
 
 const onRequest = (request, response) => {
   switch (request.url) {
@@ -25,6 +26,11 @@ const onRequest = (request, response) => {
 	case '/star.png':
       response.writeHead(200, { 'Content-Type': 'image/png' });
       response.write(starImg);
+      break;
+	  
+	case '/yellowStar.png':
+      response.writeHead(200, { 'Content-Type': 'image/png' });
+      response.write(yellStarImg);
       break;
 
     default:

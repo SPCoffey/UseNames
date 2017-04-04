@@ -36,10 +36,14 @@ const updatePopular = (popular) => {
 
 const requestNames = () => {
 	socket.emit('requestNames', null);
+	
+	document.querySelector("#likeImage").src = "star.png";
 };
 
 const likeName = () => {
 	socket.emit('like', null);
+	
+	document.querySelector("#likeImage").src = "yellowStar.png";
 };
 
 const init = () => {
