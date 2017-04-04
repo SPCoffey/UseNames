@@ -253,13 +253,32 @@ const geographic = () => {
 };
 
 const possessive = () => {
-  const temp = `${randomNameNoFilter(randomGen(1, 3))}'s_${randomNameNoFilter(randomGen(1, 3))}`;
+  let temp = '';
+  
+  const random = randomGen(0, 2);
+  
+  switch (random) {
+    case 0:
+      temp = `${randomNameNoFilter(randomGen(1, 3))}'s_${randomNameNoFilter(randomGen(1, 3))}`;
+      break;
+    case 1:
+      temp = `${randomNameNoFilter(randomGen(1, 3))}_And_The_${randomNameNoFilter(randomGen(1, 3))}`;
+      break;
+    default:
+      // Do nothing
+      break;
+  }
+  
+  if (randomGen(0,2) === 0)
+  {
+    temp += "s";
+  }
 
   return temp;
 };
 
 const verb = () => {
-  const random = randomGen(0, 2);
+  const random = randomGen(0, 3);
   let temp = '';
   let tempVerb = verbs[randomGen(0, verbs.length)];
 
@@ -268,6 +287,7 @@ const verb = () => {
       temp = `${verbs[randomGen(0, verbs.length)]}_${randomNameNoFilter(randomGen(1, 3))}`;
       break;
     case 1:
+	  console.log(tempVerb.charAt(tempVerb.length - 2));
       if (tempVerb.charAt(tempVerb.Length - 1) === 's') {
         tempVerb += 'es';
       } else {
@@ -275,6 +295,16 @@ const verb = () => {
       }
 
       temp = `${randomNameNoFilter(randomGen(1, 3))}_${tempVerb}_${randomNameNoFilter(randomGen(1, 3))}s`;
+      break;
+	case 2:
+	  console.log(tempVerb.charAt(tempVerb.length - 2));
+      if (tempVerb.charAt(tempVerb.length - 1) === 's') {
+        tempVerb += 'es';
+      } else {
+        tempVerb += 's';
+      }
+
+      temp = `${tempVerb}_with_${randomNameNoFilter(randomGen(1, 3))}s`;
       break;
     default:
       // Do nothing
