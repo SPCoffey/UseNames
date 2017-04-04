@@ -25,10 +25,45 @@ body {
 	margin-bottom: 0px;
 }
 
+#disclaimer {
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+}
+
+#popular {
+	position: absolute;
+	text-align: center;
+	text-shadow: 3px 3px #025eb0;
+	width: 350px;
+	top: 150px;
+}
+
+#popular p {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#popNames {
+	padding-top: 10px;
+	text-shadow: 2px 2px #025eb0;
+	font-size: 20px;
+	height: 500px;
+	text-overflow: clip;
+	
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 #result {
-	width: 650px;
+	width: 850px;
 	margin-left: auto;
 	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #intro {
@@ -37,25 +72,15 @@ body {
 }
 
 #nameDiv {
-	text-shadow: 3px 3px #0267c1;
+	width: 650px;
+	height: 100px;
 	
+	text-shadow: 3px 3px #0267c1;
 	text-align: center;
-	background-color: #1781c9;
-	background-image:-webkit-linear-gradient(top, #1781c9, #0075c4);
-	background-image:-moz-linear-gradient(top, #1781c9, #0075c4);
-	background-image:-ms-linear-gradient(top, #1781c9, #0075c4);
-	background-image:-o-linear-gradient(top, #1781c9, #0075c4);
-	background-image:linear-gradient(to bottom, #1781c9, #0075c4);
-	-webkit-box-shadow:0 2px 4px rgba(0, 0, 0, .5) inset, 0 2px 0 #0075c4; 
-	-moz-box-shadow:0 2px 4px rgba(0, 0, 0, .5) inset, 0 2px 0 #0075c4; 
-	box-shadow:0 2px 4px rgba(0, 0, 0, .5) inset, 0 2px 0 #0075c4;
-	padding-left: 5px;
-	padding-right: 5px;
-	padding-bottom: 2px;
-	padding-top: 2px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
-	border-radius:5px;
+	text-overflow: clip;
+	
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #request {
@@ -103,6 +128,77 @@ body {
 	background-image:linear-gradient(top, #d65108, #fe621d);
 }
 
+#like {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-left: 20px;
+	width: 70px;
+	
+	text-shadow:-1px -1px 0 #004b7d;
+	background: #459ad4;
+	border:1px solid #2e8ece;
+	
+	background-image:-webkit-linear-gradient(top, #459ad4, #2e8ece);
+	background-image:-moz-linear-gradient(top, #459ad4, #2e8ece);
+	background-image:-ms-linear-gradient(top, #459ad4, #2e8ece);
+	background-image:-o-linear-gradient(top, #459ad4, #2e8ece);
+	background-image:linear-gradient(to bottom, #459ad4, #2e8ece);
+	
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	
+	-webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #0075c4, 0 4px 2px rgba(0, 0, 0, .5);
+	-moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #0075c4, 0 4px 2px rgba(0, 0, 0, .5);
+	box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #0075c4, 0 4px 2px rgba(0, 0, 0, .5);
+}
+
+#like:hover {
+	background: #459ad4;
+	background-image:-webkit-linear-gradient(top, #2e8ece, #459ad4);
+	background-image:-moz-linear-gradient(top, #2e8ece, #459ad4);
+	background-image:-ms-linear-gradient(top, #2e8ece, #459ad4);
+	background-image:-o-linear-gradient(top, #2e8ece, #459ad4);
+	background-image:linear-gradient(top, #2e8ece, #459ad4);
+}
+
+#like:active {
+	-webkit-box-shadow:0 0px 0 rgba(255, 255, 255, .5) inset, 0 0px 0 rgba(255, 255, 255, .1) inset, 0 0px 0 #c34a08, 0 0px 0px rgba(0, 0, 0, .5);
+	-moz-box-shadow:0 0px 0 rgba(255, 255, 255, .5) inset, 0 0px 0 rgba(255, 255, 255, .1) inset, 0 0px 0 #c34a08, 0 0px 0px rgba(0, 0, 0, .5);
+	box-shadow:0 0px 0 rgba(255, 255, 255, .5) inset, 0 0px 0 rgba(255, 255, 255, .1) inset, 0 0px 0 #c34a08, 0 0px 0px rgba(0, 0, 0, .5);
+	
+	background: #d65108;
+	background-image:-webkit-linear-gradient(top, #459ad4, #2e8ece);
+	background-image:-moz-linear-gradient(top, #459ad4, #2e8ece);
+	background-image:-ms-linear-gradient(top, #459ad4, #2e8ece);
+	background-image:-o-linear-gradient(top, #459ad4, #2e8ece);
+	background-image:linear-gradient(top, #459ad4, #2e8ece);
+}
+
+#like img {
+	margin-top: 2px;
+}
+
+.recessed {
+	background-color: #1781c9;
+	background-image:-webkit-linear-gradient(top, #1781c9, #0075c4);
+	background-image:-moz-linear-gradient(top, #1781c9, #0075c4);
+	background-image:-ms-linear-gradient(top, #1781c9, #0075c4);
+	background-image:-o-linear-gradient(top, #1781c9, #0075c4);
+	background-image:linear-gradient(to bottom, #1781c9, #0075c4);
+	-webkit-box-shadow:0 2px 4px rgba(0, 0, 0, .5) inset, 0 2px 0 #0075c4; 
+	-moz-box-shadow:0 2px 4px rgba(0, 0, 0, .5) inset, 0 2px 0 #0075c4; 
+	box-shadow:0 2px 4px rgba(0, 0, 0, .5) inset, 0 2px 0 #0075c4;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+}
+
 /*
 Push buttons by Rishabh
 http://cssdeck.com/labs/push-the-buttons
@@ -120,6 +216,7 @@ http://cssdeck.com/labs/push-the-buttons
 	font-size: 30px;
 	display: block;
 	margin: 30px;
+	cursor: pointer;
 }
 .push_button:before {
 	background:#0075c4;
@@ -148,4 +245,39 @@ http://cssdeck.com/labs/push-the-buttons
 	top: -11px;
 	bottom: -5px;
 	content: "";
+}
+
+@media only screen and (max-width: 1280px) {
+    #popular {
+		position: relative;
+		margin-right: auto;
+		margin-left: auto;
+		top: initial;
+	}
+	
+	#disclaimer {
+		position: relative;
+		margin-right: auto;
+		margin-left: auto;
+		right: initial;
+		bottom: initial;
+	}
+	
+	#result {
+		width: 90%;
+		flex-direction: column;
+	}
+	
+	#nameDiv {
+		width: 100%;
+		font-size: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	#like {
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
 }

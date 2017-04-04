@@ -15,21 +15,38 @@ const connectSocket = (e) => {
 	socket.on('response', (data) => {
 		handleMessage(data);
 	});
+	
+	socket.on('updatePopular', (data) => {
+		updatePopular(data.popular);
+	});
 };
 
 const handleMessage = (data) => {
 	document.querySelector("#intro").innerHTML = intros[Math.floor((Math.random() * intros.length))];
-	document.querySelector("#response").innerHTML = data.names;
+	document.querySelector("#response").innerHTML = data.name;
+};
+
+const updatePopular = (popular) => {
+	document.querySelector("#popNames").innerHTML = "";
+	for (var i = 0; i < popular.length; i++)
+	{
+		document.querySelector("#popNames").innerHTML += popular[i] + "<br>";
+	}
 };
 
 const requestNames = () => {
 	socket.emit('requestNames', null);
 };
 
+const likeName = () => {
+	socket.emit('like', null);
+};
+
 const init = () => {
 	connectSocket();
 	socket.emit('requestNames', null);
-	document.querySelector("#request").addEventListener('click', requestNames);;
+	document.querySelector("#request").addEventListener('click', requestNames);
+	document.querySelector("#like").addEventListener('click', likeName);
 };
 
 window.onload = init;

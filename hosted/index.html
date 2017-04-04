@@ -15,12 +15,21 @@
 		<h1>UseNames</h1>
 		<h2>The Username Generator</h2>
 	</div>
+	
 	<button class="push_button" id="request" type="button">Generate Name</button>
+	<p id="intro">Your new username is:</p>
 	<div id="result">
-		<p id="intro">Your new username is:</p>
-		<div id="nameDiv">
+		<div class="recessed" id="nameDiv">
 			<p id="response">Loading...</p>
 		</div>
+		<button class="push_button" id="like" type="button"><img src="star.png" alt="Like!" style="width:50px;height:50px;"></button>
 	</div>
+	
+	<div id="popular">
+		<p>Popular Names:</p>
+		<p class="recessed" id="popNames">Loading...</p>
+	</div>
+	
+	<p id="disclaimer">Warning: The generator is prone to making stupid and NSFW names.</p>
 </body>
 </html>
