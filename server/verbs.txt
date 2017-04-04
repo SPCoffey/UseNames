@@ -37,3 +37,12 @@ Drink
 Raid
 Stab
 Cut
+Cuddle
+Snuggle
+Annihilate
+Kiss
+Hug
+Discuss
+Talk
+Consider
+Invent

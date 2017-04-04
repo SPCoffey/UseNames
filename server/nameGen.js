@@ -230,6 +230,9 @@ const suffix = (name) => {
         case 7:
             temp += "meister";
             break;
+		case 8:
+            temp += "_jam_" + randomGen(1960, 2066);
+            break;
     }
 
     return temp;
@@ -318,7 +321,7 @@ const geographic = (name) => {
 }
 
 const possessive = (name) => {
-    let temp = name + "'s_" + randomNameNoFilter(randomGen(1, 3));
+    let temp = randomNameNoFilter(randomGen(1, 3)) + "'s_" + randomNameNoFilter(randomGen(1, 3));
 
     return temp;
 }

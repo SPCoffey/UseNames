@@ -35,7 +35,6 @@ Lover
 Sama
 Garden
 High
-Caaarl
 Weeb
 Chocolate
 Pastry
@@ -502,8 +501,6 @@ Mill
 Savory
 Randy
 Cena
-Jon
-John
 Doge
 Smart
 Dumb
@@ -722,7 +719,6 @@ Wine
 Beer
 Microphone
 Megaphone
-Schuyler
 System
 Boot
 Bios
@@ -793,3 +789,10 @@ Wholesome
 Soft
 Cute
 Tasty
+Berserker
+Axe
+Sword
+Knife
+Whip
+Flail
+Hammer

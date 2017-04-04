@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>UseNames</title>
+	<meta name="description" content="Random Usernames">
+	<meta name="author" content="Sean Coffey">
+	<link href="https://fonts.googleapis.com/css?family=Anton|Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="clientStyle.css">
     <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
 	<script src="/socket.io/socket.io.js"></script>
     <script src="clientScript.js"></script>
 </head>
 <body>
-	<button id="request" type="button">Generate Names</button>
-	<p id="response">Names Go Here</p>
+	<div id="header">
+		<h1>UseNames</h1>
+		<h2>The Username Generator</h2>
+	</div>
+	<button class="push_button" id="request" type="button">Generate Name</button>
+	<div id="result">
+		<p id="intro">Your new username is:</p>
+		<div id="nameDiv">
+			<p id="response">Loading...</p>
+		</div>
+	</div>
 </body>
 </html>
