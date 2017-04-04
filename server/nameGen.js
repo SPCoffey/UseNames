@@ -287,8 +287,7 @@ const verb = () => {
       temp = `${verbs[randomGen(0, verbs.length)]}_${randomNameNoFilter(randomGen(1, 3))}`;
       break;
     case 1:
-	  console.log(tempVerb.charAt(tempVerb.length - 2));
-      if (tempVerb.charAt(tempVerb.Length - 1) === 's') {
+      if (tempVerb.charAt(tempVerb.Length - 2) === 's') {
         tempVerb += 'es';
       } else {
         tempVerb += 's';
@@ -297,8 +296,7 @@ const verb = () => {
       temp = `${randomNameNoFilter(randomGen(1, 3))}_${tempVerb}_${randomNameNoFilter(randomGen(1, 3))}s`;
       break;
 	case 2:
-	  console.log(tempVerb.charAt(tempVerb.length - 2));
-      if (tempVerb.charAt(tempVerb.length - 1) === 's') {
+      if (tempVerb.charAt(tempVerb.length - 2) === 's') {
         tempVerb += 'es';
       } else {
         tempVerb += 's';
