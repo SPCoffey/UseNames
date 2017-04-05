@@ -32,7 +32,6 @@ const leetFilter = (name) => {
     if (randomGen(0, 11) < 5) temp = temp.replace(/e/g, '3').replace(/E/g, '3');
     if (randomGen(0, 11) < 5) temp = temp.replace(/O/g, '0').replace(/o/g, '0');
     if (randomGen(0, 11) < 5) temp = temp.replace(/l/g, '1').replace(/L/g, '1');
-    if (randomGen(0, 11) < 5) temp = temp.replace(/t/g, '7').replace(/T/g, '7');
     if (randomGen(0, 11) < 5) temp = temp.replace(/a/g, '4').replace(/A/g, '4');
   }
 
@@ -212,6 +211,9 @@ const originalCharacter = (name) => {
     case (1):
       temp = `The_${randomNameNoFilter(1)}_${randomNameNoFilter(1)}`;
       break;
+	case (2):
+      temp = `The_${randomNameNoFilter(1)}`;
+      break;
     default:
       // Do nothing
       break;
@@ -314,24 +316,23 @@ const verb = () => {
   } else {
     tempVerb += 's';
   }
+  
+  let tempName = randomNameNoFilter(1); 
+  if (tempName.charAt(tempName.length - 2) === 's') {
+    tempName += 'es';
+  } else {
+    tempName += 's';
+  }
 
   switch (random) {
     case 0:
       temp = `${verbs[randomGen(0, verbs.length)]}_${randomNameNoFilter(1)}`;
       break;
     case 1:
-	  let tempName = randomNameNoFilter(1);
-	  
-	  if (tempName.charAt(tempName.length - 2) === 's') {
-        tempName += 'es';
-      } else {
-        tempName += 's';
-      }
-
       temp = `${randomNameNoFilter(1)}_${tempVerb}_${tempName}`;
       break;
 	case 2:
-      temp = `${tempVerb}_with_${randomNameNoFilter(1)}s`;
+      temp = `${tempVerb}_with_${tempName}`;
       break;
     default:
       // Do nothing
