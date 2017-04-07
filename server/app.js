@@ -49,6 +49,14 @@ const io = socketio(app);
 
 var popular = [];
 
+const popularText = `${fs.readFileSync('./server/popular.txt')}`;
+popular = popularText.split('\n');
+popular.reverse();
+if (popular.length > 20)
+{
+  popular.splice(19, popular.length - 19);
+}
+
 const onJoined = (sock) => {
   const socket = sock;
   socket.on('join', () => {
@@ -65,12 +73,14 @@ const onJoined = (sock) => {
   socket.on('like', () => {
     if (popular.indexOf(socket.lastName) === -1)
 	{
-		popular.unshift(socket.lastName);
-		if (popular.length > 20)
-		{
-			popular.splice(19, popular.length - 19);
-		}
-		socket.emit('updatePopular', { popular });
+	  popular.unshift(socket.lastName);
+	  if (popular.length > 20)
+	  {
+	  	popular.splice(19, popular.length - 19);
+	  }
+	  socket.emit('updatePopular', { popular });
+	  
+	  fs.appendFileSync('./server/popular.txt',  "\n" + socket.lastName);
 	}
   });
 };
