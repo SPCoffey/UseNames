@@ -375,7 +375,6 @@ Bullet
 Heavy
 Juggernaut
 Slayer
-Panties
 Scout
 Vanguard
 Riot
