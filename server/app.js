@@ -57,6 +57,10 @@ if (popular.length > 20)
   popular.splice(19, popular.length - 19);
 }
 
+const refreshPopular = () => {
+  io.sockets.in('room1').emit('updatePopular', { popular });
+};
+
 const onJoined = (sock) => {
   const socket = sock;
   socket.on('join', () => {
@@ -88,3 +92,5 @@ const onJoined = (sock) => {
 io.sockets.on('connection', (socket) => {
   onJoined(socket);
 });
+
+setInterval(refreshPopular, 30000);
