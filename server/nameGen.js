@@ -35,7 +35,7 @@ const leetFilter = (name) => {
     if (randomGen(0, 11) < 5) temp = temp.replace(/a/g, '4').replace(/A/g, '4');
   }
 
-  random = randomGen(0, 3);
+  random = randomGen(0, 4);
 
   if (random === 0) {
     temp = `xX${temp}`;
@@ -45,6 +45,11 @@ const leetFilter = (name) => {
   if (random === 1) {
     temp = `_${temp}`;
     temp += '_';
+  }
+  
+  if (random === 2) {
+    temp = `-${temp}`;
+    temp += '-';
   }
 
   return temp;
@@ -69,7 +74,7 @@ const yelling = (name) => {
 
 const prefix = (name) => {
   let temp = name;
-  const random = randomGen(0, 4);
+  const random = randomGen(0, 5);
 
   switch (random) {
     case 0:
@@ -87,6 +92,9 @@ const prefix = (name) => {
       break;
     case 3:
       temp = `#${randomNameNoFilter(randomGen(1, 4))}`;
+      break;
+	case 4:
+      temp = `u/${randomNameNoFilter(randomGen(1, 4))}`;
       break;
     default:
       // Do nothing
@@ -108,11 +116,10 @@ const properName = (name) => {
       temp = `Ms.${randomNameNoFilter(randomGen(1, 3))}`;
       break;
     case 2:
-	  let word = randomNameNoFilter(1);
-	  if (randomGen(0,2) === 0) {
+	  const word = randomNameNoFilter(1);
+	  if (randomGen(0, 2) === 0) {
 		  temp = `${word}y_Mc${word}face`;
-	  }
-	  else {
+	  } else {
 		  temp = `${randomNameNoFilter(1)}y_Mc${randomNameNoFilter(1)}face`;
 	  }
       break;
@@ -204,15 +211,21 @@ const suffix = () => {
 const originalCharacter = (name) => {
   let temp = name;
 
-  switch (randomGen(0, 3)) {
+  switch (randomGen(0, 4)) {
     case (0):
       temp = `${randomNameNoFilter(randomGen(1, 3))}_The_${randomNameNoFilter(1)}`;
       break;
     case (1):
       temp = `The_${randomNameNoFilter(1)}_${randomNameNoFilter(1)}`;
       break;
-	case (2):
+    case (2):
       temp = `The_${randomNameNoFilter(1)}`;
+      break;
+	case (3):
+      temp = `｢${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}｣`;
+      break;
+	case (4):
+      temp = `My Stand, ｢${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}｣`;
       break;
     default:
       // Do nothing
@@ -284,9 +297,9 @@ const geographic = () => {
 
 const possessive = () => {
   let temp = '';
-  
+
   const random = randomGen(0, 2);
-  
+
   switch (random) {
     case 0:
       temp = `${randomNameNoFilter(randomGen(1, 3))}'s_${randomNameNoFilter(1)}`;
@@ -298,10 +311,9 @@ const possessive = () => {
       // Do nothing
       break;
   }
-  
-  if (randomGen(0,2) === 0)
-  {
-    temp += "s";
+
+  if (randomGen(0, 2) === 0) {
+    temp += 's';
   }
 
   return temp;
@@ -316,8 +328,8 @@ const verb = () => {
   } else {
     tempVerb += 's';
   }
-  
-  let tempName = randomNameNoFilter(1); 
+
+  let tempName = randomNameNoFilter(1);
   if (tempName.charAt(tempName.length - 2) === 's') {
     tempName += 'es';
   } else {
@@ -331,7 +343,7 @@ const verb = () => {
     case 1:
       temp = `${randomNameNoFilter(1)}_${tempVerb}_${tempName}`;
       break;
-	case 2:
+    case 2:
       temp = `${tempVerb}_with_${tempName}`;
       break;
     default:
@@ -405,7 +417,7 @@ const applyFilter = (name) => {
     case (9):
       temp = numbers(temp);
       break;
-	case (10):
+    case (10):
       temp = properName(temp);
       break;
     default:
