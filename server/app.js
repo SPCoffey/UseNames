@@ -22,13 +22,13 @@ const onRequest = (request, response) => {
       response.writeHead(200, { 'Content-Type': 'text/babel' });
       response.write(scriptFile);
       break;
-	  
-	case '/star.png':
+
+    case '/star.png':
       response.writeHead(200, { 'Content-Type': 'image/png' });
       response.write(starImg);
       break;
-	  
-	case '/yellowStar.png':
+
+    case '/yellowStar.png':
       response.writeHead(200, { 'Content-Type': 'image/png' });
       response.write(yellStarImg);
       break;
@@ -47,13 +47,12 @@ nameGen.initialize();
 
 const io = socketio(app);
 
-var popular = [];
+let popular = [];
 
 const popularText = `${fs.readFileSync('./server/popular.txt')}`;
 popular = popularText.split('\n');
 popular.reverse();
-if (popular.length > 20)
-{
+if (popular.length > 20) {
   popular.splice(19, popular.length - 19);
 }
 
@@ -65,27 +64,25 @@ const onJoined = (sock) => {
   const socket = sock;
   socket.on('join', () => {
     socket.join('room1');
-	socket.emit('updatePopular', { popular });
+    socket.emit('updatePopular', { popular });
   });
 
   socket.on('requestNames', () => {
     const name = nameGen.randomName();
-	socket.lastName = name;
+    socket.lastName = name;
     socket.emit('response', { name });
   });
-  
+
   socket.on('like', () => {
-    if (popular.indexOf(socket.lastName) === -1)
-	{
+    if (popular.indexOf(socket.lastName) === -1)	{
 	  popular.unshift(socket.lastName);
-	  if (popular.length > 20)
-	  {
+	  if (popular.length > 20) {
 	  	popular.splice(19, popular.length - 19);
 	  }
 	  socket.emit('updatePopular', { popular });
-	  
-	  fs.appendFileSync('./server/popular.txt',  "\n" + socket.lastName);
-	}
+
+	  fs.appendFileSync('./server/popular.txt', `\n${socket.lastName}`);
+    }
   });
 };
 
