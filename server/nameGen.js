@@ -46,7 +46,7 @@ const leetFilter = (name) => {
     temp = `_${temp}`;
     temp += '_';
   }
-  
+
   if (random === 2) {
     temp = `-${temp}`;
     temp += '-';
@@ -93,7 +93,7 @@ const prefix = (name) => {
     case 3:
       temp = `#${randomNameNoFilter(randomGen(1, 4))}`;
       break;
-	case 4:
+    case 4:
       temp = `u/${randomNameNoFilter(randomGen(1, 4))}`;
       break;
     default:
@@ -109,23 +109,27 @@ const properName = (name) => {
   const random = randomGen(0, 3);
 
   switch (random) {
-    case 0:
+    case 0: {
       temp = `Mr.${randomNameNoFilter(randomGen(1, 3))}`;
       break;
-    case 1:
+    }
+    case 1: {
       temp = `Ms.${randomNameNoFilter(randomGen(1, 3))}`;
       break;
-    case 2:
-	  const word = randomNameNoFilter(1);
-	  if (randomGen(0, 2) === 0) {
-		  temp = `${word}y_Mc${word}face`;
-	  } else {
-		  temp = `${randomNameNoFilter(1)}y_Mc${randomNameNoFilter(1)}face`;
-	  }
+    }
+    case 2: {
+      const word = randomNameNoFilter(1);
+      if (randomGen(0, 2) === 0) {
+        temp = `${word}y_Mc${word}face`;
+      } else {
+        temp = `${randomNameNoFilter(1)}y_Mc${randomNameNoFilter(1)}face`;
+      }
       break;
-    default:
+    }
+    default: {
       // Do nothing
       break;
+    }
   }
 
   return temp;
@@ -221,10 +225,10 @@ const originalCharacter = (name) => {
     case (2):
       temp = `The_${randomNameNoFilter(1)}`;
       break;
-	case (3):
+    case (3):
       temp = `｢${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}｣`;
       break;
-	case (4):
+    case (4):
       temp = `My Stand, ｢${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}｣`;
       break;
     default:

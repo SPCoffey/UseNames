@@ -74,14 +74,14 @@ const onJoined = (sock) => {
   });
 
   socket.on('like', () => {
-    if (popular.indexOf(socket.lastName) === -1)	{
-	  popular.unshift(socket.lastName);
-	  if (popular.length > 20) {
-	  	popular.splice(19, popular.length - 19);
-	  }
-	  socket.emit('updatePopular', { popular });
+    if (popular.indexOf(socket.lastName) === -1) {
+      popular.unshift(socket.lastName);
+      if (popular.length > 20) {
+        popular.splice(19, popular.length - 19);
+      }
+      socket.emit('updatePopular', { popular });
 
-	  fs.appendFileSync('./server/popular.txt', `\n${socket.lastName}`);
+      fs.appendFileSync('./server/popular.txt', `\n${socket.lastName}`);
     }
   });
 };
