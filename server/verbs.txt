@@ -61,3 +61,6 @@ Yell
 Scream
 Play
 Game
+Punch
+Slap
+Spank

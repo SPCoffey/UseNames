@@ -879,3 +879,5 @@ Naga
 Fucky
 Voice
 Gamer
+Dank
+Computer

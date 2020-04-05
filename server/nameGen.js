@@ -229,7 +229,7 @@ const originalCharacter = (name) => {
       temp = `｢${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}｣`;
       break;
     case (4):
-      temp = `My Stand, ｢${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}｣`;
+      temp = `My_Stand,_｢${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}｣`;
       break;
     default:
       // Do nothing
@@ -242,7 +242,7 @@ const originalCharacter = (name) => {
     for (let i = 0; i < tempArray.length; i++) {
       if (tempArray[i].toLowerCase() === 'a' || tempArray[i].toLowerCase() === 'e' || tempArray[i].toLowerCase() === 'i' ||
                 tempArray[i].toLowerCase() === 'o' || tempArray[i].toLowerCase() === 'u') {
-        if (i > 2 && temp.substring(i - 2, 3) === 'The') {
+        if ((i > 2 && temp.substring(i - 2, 3) === 'The') || temp.substring(0, 3) === 'My_') {
           continue;
         }
         const letter = tempArray[i].toLowerCase();
