@@ -106,11 +106,23 @@ const prefix = (name) => {
       temp = `u/${randomNameNoFilter(randomGen(1, 4))}`;
       break;
     case 5:
-      if (randomGen(0, 2) === 0) {
-        temp = `${randomNameNoFilter(randomGen(1, 2)).toUpperCase()}ForLife`;
-      } else {
-        temp = `${randomNameNoFilter(randomGen(1, 2)).toUpperCase()}4Life`;
-      }
+	  switch (randomGen(0, 4)) {
+	    case 0:
+          temp = `${randomNameNoFilter(randomGen(1, 2)).toUpperCase()}ForLife`;
+          break;
+        case 1:
+          temp = `${randomNameNoFilter(randomGen(1, 2)).toUpperCase()}4Life`;
+          break;
+        case 2:
+          temp = `${randomNameNoFilter(1).toUpperCase()}_And_${randomNameNoFilter(1).toUpperCase()}_4_Ever`;
+          break;
+        case 3:
+          temp = `${randomNameNoFilter(1).toUpperCase()}_And_${randomNameNoFilter(1).toUpperCase()}_Forever`;
+          break;
+		default:
+          // Do nothing
+          break;
+	  }
       break;
     default:
       // Do nothing
@@ -122,7 +134,7 @@ const prefix = (name) => {
 
 const properName = (name) => {
   let temp = name;
-  const random = randomGen(0, 4);
+  const random = randomGen(0, 5);
 
   switch (random) {
     case 0: {
@@ -144,6 +156,10 @@ const properName = (name) => {
     }
 	case 3: {
       temp = `Sir_${randomNameNoFilter(randomGen(1, 3))}`;
+      break;
+    }
+	case 4: {
+      temp = `Hello_My_Name_Is_${randomNameNoFilter(randomGen(1, 3))}`;
       break;
     }
     default: {
@@ -331,7 +347,7 @@ const geographic = () => {
 const possessive = () => {
   let temp = '';
 
-  const random = randomGen(0, 4);
+  const random = randomGen(0, 7);
 
   switch (random) {
     case 0:
@@ -345,6 +361,16 @@ const possessive = () => {
       break;
     case 3:
       temp = `${randomNameNoFilter(randomGen(1, 3))}_With_${randomNameNoFilter(randomGen(1, 2))}`;
+      break;
+    case 4:
+	  word = randomNameNoFilter(randomGen(1, 2));
+      temp = `${word}_${word}_${word}`;
+      break;
+	case 5:
+	  temp = `${randomNameNoFilter(1)}_Is_A_${randomNameNoFilter(1)}`;
+      break;
+	case 6:
+      temp = `${randomNameNoFilter(randomGen(1, 2))}_With_A_${randomNameNoFilter(1)}`;
       break;
     default:
       // Do nothing
