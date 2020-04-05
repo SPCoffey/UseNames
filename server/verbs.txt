@@ -64,3 +64,4 @@ Game
 Punch
 Slap
 Spank
+Fix

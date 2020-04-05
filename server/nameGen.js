@@ -242,7 +242,7 @@ const originalCharacter = (name) => {
     for (let i = 0; i < tempArray.length; i++) {
       if (tempArray[i].toLowerCase() === 'a' || tempArray[i].toLowerCase() === 'e' || tempArray[i].toLowerCase() === 'i' ||
                 tempArray[i].toLowerCase() === 'o' || tempArray[i].toLowerCase() === 'u') {
-        if ((i > 2 && temp.substring(i - 2, 3) === 'The') || temp.substring(0, 3) === 'My_') {
+        if ((i > 2 && temp.substring(i - 2, 3) === 'The') || temp.substring(0, 3) === 'My_' || temp.substring(0, 1) === '｢') {
           continue;
         }
         const letter = tempArray[i].toLowerCase();
