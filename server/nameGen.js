@@ -215,7 +215,7 @@ const suffix = () => {
 const originalCharacter = (name) => {
   let temp = name;
 
-  switch (randomGen(0, 4)) {
+  switch (randomGen(0, 5)) {
     case (0):
       temp = `${randomNameNoFilter(randomGen(1, 3))}_The_${randomNameNoFilter(1)}`;
       break;

@@ -871,3 +871,11 @@ Truck
 Turtle
 Shark
 Belly
+Enemy
+Killer
+Lass
+Lad
+Naga
+Fucky
+Voice
+Gamer
