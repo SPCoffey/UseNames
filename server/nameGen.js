@@ -74,15 +74,24 @@ const yelling = (name) => {
 
 const prefix = (name) => {
   let temp = name;
-  const random = randomGen(0, 5);
+  const random = randomGen(0, 6);
 
   switch (random) {
     case 0:
-      if (randomGen(0, 2) === 0) {
-        temp = `PM_ME_YOUR_${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}`;
-      } else {
-        temp = `PM_ME_UR_${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}`;
-      }
+	  switch (randomGen(0, 3)) {
+	    case 0:
+          temp = `PM_ME_YOUR_${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}`;
+          break;
+        case 1:
+          temp = `PM_ME_UR_${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}`;
+          break;
+        case 2:
+          temp = `PM_ME_${randomNameNoFilter(randomGen(1, 3)).toUpperCase()}`;
+          break;
+		default:
+          // Do nothing
+          break;
+	  }
       break;
     case 1:
       temp = `@${randomNameNoFilter(randomGen(1, 4))}`;
@@ -96,6 +105,13 @@ const prefix = (name) => {
     case 4:
       temp = `u/${randomNameNoFilter(randomGen(1, 4))}`;
       break;
+    case 5:
+      if (randomGen(0, 2) === 0) {
+        temp = `${randomNameNoFilter(randomGen(1, 2)).toUpperCase()}ForLife`;
+      } else {
+        temp = `${randomNameNoFilter(randomGen(1, 2)).toUpperCase()}4Life`;
+      }
+      break;
     default:
       // Do nothing
       break;
@@ -106,7 +122,7 @@ const prefix = (name) => {
 
 const properName = (name) => {
   let temp = name;
-  const random = randomGen(0, 3);
+  const random = randomGen(0, 4);
 
   switch (random) {
     case 0: {
@@ -124,6 +140,10 @@ const properName = (name) => {
       } else {
         temp = `${randomNameNoFilter(1)}y_Mc${randomNameNoFilter(1)}face`;
       }
+      break;
+    }
+	case 3: {
+      temp = `Sir_${randomNameNoFilter(randomGen(1, 3))}`;
       break;
     }
     default: {
@@ -174,7 +194,7 @@ const fileType = (name) => {
 
 const suffix = () => {
   let temp = randomNameNoFilter(randomGen(1, 3));
-  const random = randomGen(0, 8);
+  const random = randomGen(0, 12);
 
   switch (random) {
     case 0:
@@ -202,7 +222,16 @@ const suffix = () => {
       temp += 'meister';
       break;
     case 8:
-      temp += `_jam_${randomGen(1960, 2066)}`;
+      temp += `_Jam_${randomGen(1960, 2066)}`;
+      break;
+	case 9:
+      temp += '_Did_Nothing_Wrong';
+      break;
+	case 10:
+      temp += `_Is_${randomNameNoFilter(randomGen(1, 2))}`;
+      break;
+	case 11:
+      temp += 'Bot';
       break;
     default:
       // Do nothing
@@ -302,7 +331,7 @@ const geographic = () => {
 const possessive = () => {
   let temp = '';
 
-  const random = randomGen(0, 2);
+  const random = randomGen(0, 4);
 
   switch (random) {
     case 0:
@@ -310,6 +339,12 @@ const possessive = () => {
       break;
     case 1:
       temp = `${randomNameNoFilter(1)}_And_The_${randomNameNoFilter(1)}`;
+      break;
+    case 2:
+      temp = `${randomNameNoFilter(1)}_${randomNameNoFilter(1)}_And_${randomNameNoFilter(1)}`;
+      break;
+    case 3:
+      temp = `${randomNameNoFilter(randomGen(1, 3))}_With_${randomNameNoFilter(randomGen(1, 2))}`;
       break;
     default:
       // Do nothing
@@ -324,7 +359,7 @@ const possessive = () => {
 };
 
 const verb = () => {
-  const random = randomGen(0, 3);
+  const random = randomGen(0, 6);
   let temp = '';
   let tempVerb = verbs[randomGen(0, verbs.length)];
   if (tempVerb.charAt(tempVerb.length - 2) === 's') {
@@ -349,6 +384,15 @@ const verb = () => {
       break;
     case 2:
       temp = `${tempVerb}_with_${tempName}`;
+      break;
+	case 3:
+      temp = `${verbs[randomGen(0, verbs.length)]}ing_${randomNameNoFilter(1)}`;
+      break;
+	case 4:
+      temp = `${verbs[randomGen(0, verbs.length)]}ed_${randomNameNoFilter(1)}`;
+      break;
+    case 5:
+      temp = `The_${randomNameNoFilter(1)}_${verbs[randomGen(0, verbs.length)]}er`;
       break;
     default:
       // Do nothing
@@ -379,8 +423,19 @@ const randomSpace = (name) => {
 
   temp = temp.replace(/\s+/g, '');
 
-  if (randomGen(0, 2) === 1) {
-    temp = temp.replace(/_/g, '-');
+  switch (randomGen(0, 5)) {
+    case 0:
+      temp = temp.replace(/_/g, '-');
+      break;
+    case 1:
+      temp = temp.replace(/_/g, '.');
+      break;
+    case 2:
+      temp = temp.replace(/_/g, '');
+      break;
+    default:
+      // Do nothing
+      break;
   }
 
   return temp;
